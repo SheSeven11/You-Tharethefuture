@@ -102,128 +102,25 @@
 
 <section class="form-section">
   <div class="form-wrap" id="formWrap">
-    <p class="form-intro">You are not alone. Tell us what you need and we will do everything we can to help. Our team reviews every request and will reach out within 24–48 hours.</p>
+    <p class="form-intro">You are not alone. We know reaching out can be hard. You do not have to explain everything right now — just let us know you need us and we will take it from there.</p>
 
-    <form id="requestForm" action="https://formspree.io/f/seven@youtharethefutureatl.org" method="POST">
-      <input type="hidden" name="_subject" value="NEW Family Resource Request — YOU-TH Are The Future" />
-      <input type="hidden" name="urgency_level" id="urgency_input" value="" />
+    <div style="background:rgba(80,32,96,0.2); border-left:3px solid var(--red); padding:20px 24px; margin-bottom:24px; line-height:1.85; color:var(--gray); font-size:0.95rem;">
+      We are working to make this process even easier for you. In the meantime, reach out to us directly — no long forms, no pressure. Just tell us you need help and we will respond.<br/><br/>
+      <strong style="color:var(--white);">Somebody cares which way you go.</strong>
+    </div>
 
-      <!-- CONTACT INFO -->
-      <div class="form-section-title">Your Information</div>
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">First Name <span class="required">*</span></label>
-          <input class="form-input" type="text" name="first_name" placeholder="First name" required />
-        </div>
-        <div class="form-group">
-          <label class="form-label">Last Name <span class="required">*</span></label>
-          <input class="form-input" type="text" name="last_name" placeholder="Last name" required />
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Phone Number <span class="required">*</span></label>
-          <input class="form-input" type="tel" name="phone" placeholder="(404) 000-0000" required />
-        </div>
-        <div class="form-group">
-          <label class="form-label">Email Address</label>
-          <input class="form-input" type="email" name="email" placeholder="your@email.com" />
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Delivery Address <span class="required">*</span></label>
-        <input class="form-input" type="text" name="address" placeholder="Street address, City, State, ZIP" required />
-      </div>
+    <div class="form-section-title">How Would You Like to Reach Us?</div>
 
-      <!-- HOUSEHOLD -->
-      <div class="form-section-title">Household Information</div>
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Number of Adults in Home</label>
-          <select class="form-select" name="num_adults">
-            <option value="" disabled selected>Select...</option>
-            <option>1</option><option>2</option><option>3</option><option>4+</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Number of Children in Home</label>
-          <select class="form-select" name="num_children">
-            <option value="" disabled selected>Select...</option>
-            <option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Children's Ages & Gender <span style="font-weight:400;text-transform:none;letter-spacing:0;font-size:0.8rem;color:var(--gray);">(helps us match items)</span></label>
-        <input class="form-input" type="text" name="children_ages_gender" placeholder="e.g. Boy age 7, Girl age 12, Boy age 3" />
-      </div>
+    <div style="display:flex; flex-direction:column; gap:16px; margin-top:8px;">
+      <a href="mailto:seven@youtharethefutureatl.org?subject=I%20Need%20Help%20%E2%80%94%20Resource%20Request&body=Hello%2C%20I%20need%20some%20help%20and%20would%20like%20someone%20to%20reach%20out%20to%20me.%0A%0AMy%20name%3A%20%0AMy%20phone%20number%3A%20%0ABest%20time%20to%20reach%20me%3A%20%0A%0AI%20can%20share%20more%20when%20someone%20contacts%20me." class="btn-submit" style="display:block; text-decoration:none; text-align:center;">
+        REQUEST A CALL BACK &#9670;
+      </a>
+      <a href="tel:4044921579" class="btn-submit" style="display:block; text-decoration:none; text-align:center; background:rgba(80,32,96,0.6); clip-path:polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);">
+        CALL US DIRECTLY — 404.492.1579 &#9670;
+      </a>
+    </div>
 
-      <!-- ITEMS NEEDED -->
-      <div class="form-section-title">What Do You Need?</div>
-      <div class="form-group">
-        <label class="form-label">Select All That Apply <span class="required">*</span></label>
-        <div class="checkbox-group">
-          <label class="checkbox-label"><input type="checkbox" name="items_needed" value="Beds / Bedding" /><span>Beds / Bedding <span class="note">— frames, mattresses, sheets, pillows</span></span></label>
-          <label class="checkbox-label"><input type="checkbox" name="items_needed" value="Furniture" /><span>Furniture <span class="note">— dressers, tables, chairs, sofas</span></span></label>
-          <label class="checkbox-label"><input type="checkbox" name="items_needed" value="Kitchen Items" /><span>Kitchen Items <span class="note">— dishes, pots, utensils, appliances</span></span></label>
-          <label class="checkbox-label"><input type="checkbox" name="items_needed" value="Clothing" /><span>Clothing <span class="note">— adults and/or children</span></span></label>
-          <label class="checkbox-label"><input type="checkbox" name="items_needed" value="Baby / Toddler Items" /><span>Baby / Toddler Items <span class="note">— diapers, formula, clothes, gear</span></span></label>
-          <label class="checkbox-label"><input type="checkbox" name="items_needed" value="Personal Care" /><span>Personal Care <span class="note">— hygiene products, toiletries</span></span></label>
-          <label class="checkbox-label"><input type="checkbox" name="items_needed" value="Food / Groceries" /><span>Food / Groceries <span class="note">— non-perishable items</span></span></label>
-          <label class="checkbox-label"><input type="checkbox" name="items_needed" value="Cleaning Supplies" /><span>Cleaning Supplies</span></label>
-          <label class="checkbox-label"><input type="checkbox" name="items_needed" value="School Supplies" /><span>School Supplies <span class="note">— backpacks, notebooks, uniforms</span></span></label>
-          <label class="checkbox-label"><input type="checkbox" name="items_needed" value="Other" /><span>Other <span class="note">— describe below</span></span></label>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label class="form-label">Describe Your Needs in Detail</label>
-        <textarea class="form-textarea" name="needs_description" placeholder="Please share anything that helps us understand your situation — sizes, quantities, specific items, or anything else we should know..."></textarea>
-      </div>
-
-      <!-- URGENCY -->
-      <div class="form-section-title">How Urgent Is This?</div>
-      <div class="form-group">
-        <div class="urgency-group">
-          <button type="button" class="urgency-btn" onclick="setUrgency(this, 'Urgent — Within 24–48 Hours')">🔴 Urgent</button>
-          <button type="button" class="urgency-btn" onclick="setUrgency(this, 'This Week')">🟡 This Week</button>
-          <button type="button" class="urgency-btn" onclick="setUrgency(this, 'Within 2 Weeks')">🟢 2 Weeks</button>
-        </div>
-      </div>
-
-      <!-- DELIVERY -->
-      <div class="form-section-title">Delivery & Contact</div>
-      <div class="form-group">
-        <label class="form-label">Delivery or Pickup?</label>
-        <div class="checkbox-group">
-          <label class="checkbox-label"><input type="radio" name="delivery_type" value="I can pick up (preferred)" /><span>I can pick up <span class="note">— preferred option</span></span></label>
-          <label class="checkbox-label"><input type="radio" name="delivery_type" value="Delivery needed — transportation is a barrier for me" /><span>Delivery needed <span class="note">— transportation is a barrier for me</span></span></label>
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Best Time to Reach You</label>
-        <select class="form-select" name="best_time">
-          <option value="" disabled selected>Select a time...</option>
-          <option>Morning (8am – 12pm)</option>
-          <option>Afternoon (12pm – 5pm)</option>
-          <option>Evening (5pm – 8pm)</option>
-          <option>Anytime</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label">Additional Notes</label>
-        <textarea class="form-textarea" name="additional_notes" placeholder="Anything else we should know — gate codes, accessibility needs, preferred contact method, etc."></textarea>
-      </div>
-
-      <button type="submit" class="btn-submit">SUBMIT REQUEST &#9670;</button>
-      <p class="form-note">Everything you share is kept strictly confidential and used only to coordinate support for you and your family. We do not share your information with anyone outside our team.<br />YOU-TH ARE THE FUTURE, Inc. is a registered 501(c)(3) nonprofit corporation in the State of Georgia.<br /><a href="legal.html" style="color:rgba(192,192,192,0.5); font-size:0.78rem;">Legal &amp; Privacy Notice</a></p>
-    </form>
-  </div>
-
-  <div class="success-msg" id="successMsg">
-    <h2>Request Received &#9670;</h2>
-    <p>Thank you for reaching out. Our team has received your request and will follow up with you within 24–48 hours to coordinate next steps.<br /><br />You are not alone. Somebody cares which way you go.</p>
-  </div>
+    <p class="form-note" style="margin-top:20px;">Everything you share is kept strictly confidential and used only to coordinate support for you and your family. We do not share your information with anyone outside our team.<br/><a href="legal.html" style="color:rgba(192,192,192,0.5); font-size:0.78rem;">Legal &amp; Privacy Notice</a></p>
 </section>
 
 <footer>
