@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate | YOU-TH ARE THE FUTURE</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Teko:wght@400;500;600;700&family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --purple: rgb(80,32,96); --red: rgb(240,0,0); --black: #0a0a0a; --white: #f5f5f5; --gray: #c0c0c0; --dark-purple: rgb(30,10,40); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--black); color: var(--white); font-family: 'Barlow', sans-serif; overflow-x: hidden; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 8px 28px; background: #0a0a0a; border-bottom: 2px solid var(--red); }
+  .nav-logo-wrap { background: #0a0a0a; display: flex; align-items: center; }
+  nav img.nav-logo { height: 68px; width: auto; display: block; mix-blend-mode: lighten; }
+  .nav-links { display: flex; gap: 22px; list-style: none; align-items: center; }
+  .nav-links a { color: var(--white); text-decoration: none; font-family: 'Teko', sans-serif; font-weight: 500; font-size: 1.2rem; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; position: relative; padding-bottom: 2px; }
+  .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--red); transform: scaleX(0); transition: transform 0.2s; }
+  .nav-links a:hover { color: var(--red); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+  .nav-links .nav-cta { background: var(--red); color: var(--white) !important; padding: 7px 20px; clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%); }
+  .nav-links .nav-cta::after { display: none; }
+  .nav-links .nav-cta:hover { background: #cc0000; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+  .hamburger span { display: block; width: 26px; height: 2px; background: var(--white); }
+  .mobile-menu { display: none; position: fixed; top: 86px; left: 0; right: 0; background: rgba(10,10,10,0.99); padding: 24px; flex-direction: column; gap: 18px; z-index: 99; border-bottom: 2px solid var(--red); }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { color: var(--white); text-decoration: none; font-family: 'Teko', sans-serif; font-weight: 500; font-size: 1.6rem; letter-spacing: 0.1em; text-transform: uppercase; }
+  .mobile-menu a:hover { color: var(--red); }
+
+  .hero { position: relative; padding: 120px 20px 60px; background: linear-gradient(180deg, rgb(40,10,50) 0%, var(--purple) 60%, rgb(40,10,50) 100%); display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .hero-logo { width: min(420px, 85vw); margin-bottom: 20px; filter: drop-shadow(0 0 30px rgba(240,0,0,0.3)); }
+  .hero-tagline { font-family: 'Barlow Condensed', sans-serif; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--gray); margin-bottom: 16px; }
+  .hero-divider { width: 60px; height: 3px; background: var(--red); margin: 16px auto; }
+  .hero-headline { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.8rem, 8vw, 5rem); color: var(--white); line-height: 1; margin-bottom: 12px; }
+  .hero-headline span { color: var(--red); }
+  .hero-body { font-size: clamp(1rem, 2.5vw, 1.15rem); color: var(--gray); max-width: 600px; line-height: 1.75; }
+
+  .priority-section { padding: 64px 20px; background: var(--black); text-align: center; }
+  .section-label { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
+  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--white); margin-bottom: 32px; }
+  .priority-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto; }
+  .priority-card { background: rgba(80,32,96,0.15); border: 1px solid var(--red); border-top: 3px solid var(--red); padding: 28px 22px; text-align: center; transition: transform 0.2s; }
+  .priority-card:hover { transform: translateY(-4px); }
+  .badge { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+  .priority-card h3 { font-family: 'Teko', sans-serif; font-weight: 600; font-size: 1.4rem; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+  .priority-card p { font-size: 0.88rem; color: var(--gray); line-height: 1.65; }
+
+  .categories-section { padding: 64px 20px; background: linear-gradient(to bottom, var(--black), var(--dark-purple)); text-align: center; }
+  .categories-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto; }
+  .category-card { background: rgba(10,10,10,0.8); border: 1px solid var(--red); border-top: 3px solid var(--red); padding: 28px 22px; text-align: center; transition: transform 0.2s; }
+  .category-card:hover { transform: translateY(-4px); }
+  .category-card h3 { font-family: 'Teko', sans-serif; font-weight: 600; font-size: 1.4rem; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
+  .category-card p { font-size: 0.88rem; color: var(--gray); line-height: 1.65; }
+
+  .form-section { padding: 64px 20px; background: var(--dark-purple); text-align: center; }
+  .form-wrap { background: rgba(80,32,96,0.15); border: 1px solid rgba(240,0,0,0.3); border-top: 3px solid var(--red); padding: 40px 32px; max-width: 640px; margin: 32px auto 0; text-align: left; }
+  .form-intro { font-size: 1rem; color: var(--gray); line-height: 1.75; margin-bottom: 28px; }
+  .form-group { margin-bottom: 20px; }
+  .form-label { display: block; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray); margin-bottom: 8px; }
+  .form-input, .form-select, .form-textarea { width: 100%; background: rgba(10,10,10,0.8); border: 1px solid rgba(80,32,96,0.6); color: var(--white); padding: 12px 16px; font-family: 'Barlow', sans-serif; font-size: 1rem; transition: border-color 0.2s; outline: none; }
+  .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--red); }
+  .form-textarea { min-height: 120px; resize: vertical; }
+  .form-select option { background: #1a0a24; }
+  .checkbox-group { display: flex; flex-direction: column; gap: 10px; }
+  .checkbox-label { display: flex; align-items: center; gap: 12px; cursor: pointer; padding: 12px 16px; background: rgba(10,10,10,0.6); border: 1px solid rgba(80,32,96,0.4); transition: border-color 0.2s; }
+  .checkbox-label:hover { border-color: var(--red); }
+  .checkbox-label input { width: 18px; height: 18px; accent-color: var(--red); cursor: pointer; flex-shrink: 0; }
+  .checkbox-label span { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); }
+  .btn-submit { width: 100%; background: var(--red); color: var(--white); font-family: 'Teko', sans-serif; font-weight: 600; font-size: 1.3rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 16px; border: none; cursor: pointer; margin-top: 28px; clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%); transition: background 0.2s, transform 0.2s; }
+  .btn-submit:hover { background: #cc0000; transform: translateY(-2px); }
+
+  footer { background: #050505; border-top: 2px solid var(--red); padding: 40px 24px 28px; text-align: center; }
+  .footer-logo-wrap { background: #050505; display: inline-flex; align-items: center; margin-bottom: 16px; }
+  footer img.footer-logo { height: 60px; width: auto; display: block; mix-blend-mode: lighten; }
+  .footer-info { font-size: 0.88rem; color: var(--gray); line-height: 2; margin-bottom: 16px; }
+  .footer-info a { color: var(--red); text-decoration: none; }
+  .footer-info a:hover { color: var(--white); }
+  .footer-bottom { font-size: 0.75rem; color: rgba(192,192,192,0.3); border-top: 1px solid rgba(255,255,255,0.06); padding-top: 16px; margin-top: 16px; }
+
+  @media (max-width: 700px) { .nav-links { display: none; } .hamburger { display: flex; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo-wrap">
+    <img src="secondary_logo_transparent.png" alt="YOU-TH Are The Future" class="nav-logo" />
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#mission">Who We Are</a></li>
+    <li><a href="index.html#founder">Our Story</a></li>
+    <li><a href="index.html#whatwedo">What We Do</a></li>
+    <li><a href="youth_donation_page.html">Donate</a></li>
+    <li><a href="press.html">Press</a></li>
+    <li><a href="legal.html">Legal</a></li>
+    <li><a href="youth_sponsorship_page.html" class="nav-cta">Sponsor</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="toggleMenu()">Home</a>
+  <a href="index.html#mission" onclick="toggleMenu()">Who We Are</a>
+  <a href="youth_donation_page.html" onclick="toggleMenu()">Donate</a>
+  <a href="youth_sponsorship_page.html" onclick="toggleMenu()">Sponsor</a>
+  <a href="press.html" onclick="toggleMenu()">Press &amp; Features</a>
+  <a href="legal.html" onclick="toggleMenu()">Legal &amp; Compliance</a>
+</div>
+
+<section class="hero">
+  <img class="hero-logo" src="primary_logo.png" alt="YOU-TH ARE THE FUTURE" />
+  <p class="hero-tagline">Guiding Youth &bull; Strengthening Families &bull; Transforming Communities</p>
+  <div class="hero-divider"></div>
+  <h1 class="hero-headline">DONATE <span>GOODS</span></h1>
+  <p class="hero-body">Every item donated goes directly to families and youth in our community. Whether you can drop it off or need us to pick it up — we will make it work. Nothing is too small. Every contribution matters.</p>
+</section>
+
+<section class="priority-section" style="background:var(--dark-purple);">
+  <p class="section-label">Give Online</p>
+  <h2 class="section-title">MAKE A MONETARY DONATION</h2>
+  <div style="max-width:640px; margin:0 auto;">
+    <a href="https://www.zeffy.com/en-US/donation-form/strengthen-families" target="_blank" rel="noopener" class="btn-submit" style="display:block; text-decoration:none; text-align:center; margin-top:0;">DONATE ONLINE &#9670;</a>
+    <a href="https://www.zeffy.com/en-US/donation-form/givingtuesday-strengthening-families-and-communities" target="_blank" rel="noopener" class="btn-submit" style="display:block; text-decoration:none; text-align:center; margin-top:12px; background:rgb(80,32,96);">GIVINGTUESDAY — DONATE HERE &#9670;</a>
+    <!-- PAYPAL DONATE BUTTON GOES HERE (SECOND) -->
+    <p style="font-size:0.8rem; color:rgba(192,192,192,0.5); margin-top:14px; line-height:1.6;">Secure online giving through Zeffy. For tax-exempt status and deductibility updates, see our <a href="legal.html" style="color:rgba(192,192,192,0.5);">Legal &amp; Compliance</a> page.</p>
+  </div>
+</section>
+
+<section class="priority-section">
+  <p class="section-label">Always Needed</p>
+  <h2 class="section-title">PRIORITY ITEMS</h2>
+  <div class="priority-grid">
+    <div class="priority-card"><p class="badge">Urgent</p><h3>Baby Items</h3><p>Diapers, wipes, formula, baby clothes (all sizes), car seats, strollers, cribs</p></div>
+    <div class="priority-card"><p class="badge">Urgent</p><h3>Personal Care</h3><p>Soap, shampoo, toothbrushes, toothpaste, deodorant, feminine hygiene products</p></div>
+  </div>
+</section>
+
+<section class="categories-section">
+  <p class="section-label">What We Accept</p>
+  <h2 class="section-title">DONATION CATEGORIES</h2>
+  <div class="categories-grid">
+    <div class="category-card"><h3>Clothing</h3><p>All sizes welcome — children, youth, and adult clothing</p></div>
+    <div class="category-card"><h3>Food</h3><p>Non-perishable items, canned goods, dry goods, baby food and formula</p></div>
+    <div class="category-card"><h3>Toys</h3><p>New or gently used toys for all ages — books, games, and educational items all welcome</p></div>
+    <div class="category-card"><h3>Furniture</h3><p>Beds, dressers, tables, chairs — gently used furniture in good condition</p></div>
+  </div>
+</section>
+
+<section class="form-section">
+  <p class="section-label">Make A Difference</p>
+  <h2 class="section-title">SUBMIT YOUR DONATION</h2>
+  <div class="form-wrap">
+    <p class="form-intro">Every item donated goes directly to families and youth in our community. Whether you can drop it off or need us to pick it up — we will make it work. Nothing is too small. Every contribution matters.</p>
+    <p class="form-intro" style="margin-top:12px;">Ready to donate? Click below and we will reach out within 24-48 hours to coordinate everything.</p>
+    <a href="mailto:seven@youtharethefutureatl.org?subject=Donation%20Inquiry%20%E2%80%94%20YOU-TH%20Are%20The%20Future&body=Hello%2C%20I%20would%20like%20to%20make%20a%20donation.%20Please%20contact%20me%20to%20coordinate.%0A%0AName%3A%20%0APhone%3A%20%0ABest%20time%20to%20reach%20me%3A%20%0AItems%20I%20would%20like%20to%20donate%3A%20" class="btn-submit" style="display:block; text-decoration:none; text-align:center; margin-top:20px;">CONTACT US TO DONATE &#9670;</a>
+    <p class="form-note">Your information is kept confidential and used only to coordinate your donation.<br />All donations are final and non-refundable. YOU-TH Are The Future, Inc. is a registered nonprofit corporation in the State of Georgia.<br /><a href="legal.html" style="color:rgba(192,192,192,0.5); font-size:0.78rem;">Legal &amp; Compliance</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo-wrap">
+    <img src="secondary_logo_transparent.png" alt="YOU-TH Are The Future" class="footer-logo" />
+  </div>
+  <div class="footer-info">
+    Atlanta, Georgia &nbsp;|&nbsp; <a href="tel:4044921579">404.492.1579</a><br />
+    <a href="mailto:seven@youtharethefutureatl.org">seven@youtharethefutureatl.org</a><br />
+    General Inquiries, Resources &amp; Donations
+  </div>
+  <div class="footer-bottom">&copy; 2026 YOU-TH Are The Future, Inc. Atlanta, Georgia. All rights reserved.<br />A registered nonprofit corporation in the State of Georgia. &nbsp;|&nbsp; <a href="legal.html" style="color:rgba(192,192,192,0.5); text-decoration:none;">Legal &amp; Compliance</a></div>
+</footer>
+
+<script>
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+</script>
+</body>
+</html>
